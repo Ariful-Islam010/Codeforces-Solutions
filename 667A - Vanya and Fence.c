@@ -1,3 +1,4 @@
+#include<stdio.h>
 int main()
 {
     long long int n,h,i,height[10000],width=0;
