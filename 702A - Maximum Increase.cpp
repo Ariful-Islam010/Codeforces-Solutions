@@ -1,38 +1,25 @@
-#include<bits/stdc++.h>
-typedef long long int ll;
+#include<iostream>
 using namespace std;
-int main()
-{
-        ll i,j,k;
-        ll n;
 
-        cin>>n;
-        ll a[n];
+int main() {
+    int n, a;
+    cin >> n;
 
-        for(i=0;i<n;i++)
-        {
-            cin>>a[i];
+    int d = -1;
+    int maximum = 0, count = 0;
+
+    while (n--) {
+        cin >> a;
+        if (a > d) {
+            count++;
+            d = a;
+            maximum = max(maximum, count);
+        } else {
+            count = 1;
+            d = a;
         }
+    }
 
-        ll count=1,max=1;
-
-        for(i=1;i<n;i++)
-        {
-            if(a[i]>a[i-1])
-                count++;
-            else
-            {
-                if(count>max)
-                    max=count;
-
-                count=1;
-            }
-        }
-
-        if(count>max)
-            max=count;
-
-        cout<<max;
-
-        return 0;
+    cout << maximum << endl;
+    return 0;
 }
